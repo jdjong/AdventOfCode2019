@@ -12,4 +12,17 @@ fun main() {
     var solution = IntCodeProgram(puzzleInputAltered).execute()[0]
 
     println("Solution silver star: $solution")
+
+    // Code for gold star
+    for (noun in 0..99) {
+        for (verb in 0..99) {
+            puzzleInputAltered[1] = noun
+            puzzleInputAltered[2] = verb
+
+            if (IntCodeProgram(puzzleInputAltered).execute()[0] == 19690720) {
+                var solutionGold = 100 * noun + verb
+                println("Solution gold star: $solutionGold")
+            }
+        }
+    }
 }
